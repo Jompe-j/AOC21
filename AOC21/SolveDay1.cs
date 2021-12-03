@@ -3,7 +3,7 @@ namespace AOC21 {
         public int Solve1(string[] content) {
             var count = 0;
 
-            for (int i = 3; i < content.Length; i++) {
+            for (var i = 3; i < content.Length; i++) {
                 var fourth = int.Parse(content[i]);
                 var third = int.Parse(content[i - 1]);
                 var second = int.Parse(content[i - 2]);
