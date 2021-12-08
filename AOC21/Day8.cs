@@ -108,7 +108,7 @@ namespace AOC21 {
         private readonly List<string> _data;
         private int _sum;
 
-        public Day8(string[] data) {
+        public Day8(IEnumerable<string> data) {
             _data = data.ToList();
         }
 
