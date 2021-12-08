@@ -104,9 +104,9 @@ namespace AOC21 {
     }
 
     internal class Day8 {
-        private List<SignalEntry> Signals = new();
+        private readonly List<SignalEntry> _signals = new();
         private readonly List<string> _data;
-        private int sum;
+        private int _sum;
 
         public Day8(string[] data) {
             _data = data.ToList();
@@ -114,11 +114,11 @@ namespace AOC21 {
 
         public void SetSignalPatterns() {
             foreach (var pattern in _data.Select(d => new SignalEntry(d))) {
-                sum += pattern.SignalSum;
-                Signals.Add(pattern);
+                _sum += pattern.SignalSum;
+                _signals.Add(pattern);
             }
 
-            Console.WriteLine(sum);
+            Console.WriteLine(_sum);
             Console.WriteLine("end");
         }
     }
