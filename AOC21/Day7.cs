@@ -6,7 +6,9 @@ namespace AOC21 {
         private readonly int[] data;
         private readonly Dictionary<int, int> _dataDictionary = new();
         private int largest;
+
         private int smallest = int.MaxValue;
+
         private List<List<int>> allCosts = new();
 
         public Day7(string[] content) {
@@ -27,14 +29,12 @@ namespace AOC21 {
             }
 
             SetVisitCost();
-
             CalculateMinimumCost();
         }
 
         private void CalculateMinimumCost() {
             var lowestCost = int.MaxValue;
             var total = 0;
-
             for (var i = 0; i < allCosts[0].Count; i++) {
                 for (var j = 0; j < allCosts.Count; j++) {
                     var tmp = allCosts[j][i];

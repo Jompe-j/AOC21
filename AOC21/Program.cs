@@ -1,10 +1,12 @@
 ﻿using System.IO;
+using System.Text;
 
 namespace AOC21 {
     internal static class Program {
         private static void Main(string[] args) {
-            var content = File.ReadAllLines(@"C:\temp\7.txt");
-            var d7 = new Day7(content);
+            var data = File.ReadAllLines(@"C:\temp\8.txt");
+            var d8 = new Day8(data);
+            d8.SetSignalPatterns();
         }
     }
 }
