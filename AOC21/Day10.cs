@@ -41,7 +41,7 @@ namespace AOC21 {
 
             foreach (var c in chunkParts) {
                 sum *= 5;
-                sum += GetValueOfSymbol(GetOpposit(c));
+                sum += GetValueOfSymbol(GetOpposite(c));
             }
 
             sumList.Add(sum);
@@ -67,7 +67,7 @@ namespace AOC21 {
 
                         break;
                     case ')' or ']' or '}' or '>': {
-                        var op = GetOpposit(c);
+                        var op = GetOpposite(c);
 
                         if (op != chunkParts.Pop()) {
                             switch (c) {
@@ -92,7 +92,7 @@ namespace AOC21 {
             return 0;
         }
 
-        private char GetOpposit(char c) {
+        private static char GetOpposite(char c) {
             return c switch {
                 ')' => '(',
                 ']' => '[',
