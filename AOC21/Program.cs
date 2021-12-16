@@ -10,8 +10,14 @@ using System.Threading.Channels;
 namespace AOC21 {
     internal static class Program {
         private static void Main() {
-            var data = File.ReadAllLines(@"C:\temp\tmp.txt");
-            var d = new Day12(data);
+            var dataLst = new List<string[]>();
+           dataLst.Add(File.ReadAllLines(@"C:\temp\tmp.txt")); 
+            dataLst.Add(File.ReadAllLines(@"C:\temp\tmp1.txt"));
+            dataLst.Add(File.ReadAllLines(@"C:\temp\tmp2.txt"));
+            dataLst.Add(File.ReadAllLines(@"C:\temp\12.txt"));
+            foreach (var data in dataLst) {
+                var d = new Day12(data);
+            }
 
             Console.WriteLine();
             Console.WriteLine("End");
@@ -53,7 +59,7 @@ namespace AOC21 {
             var oneSmallCaveTwice = IsSmallCaveSetTwice(path);
 
             foreach (var relation in currentCave.relations) {
-                if (path.Exists(x => x.Equals(currentCave.CaveString) && currentCave.smallCave)) {
+                if (path.Exists(x => x.Equals(currentCave.CaveString) && currentCave.smallCave) && oneSmallCaveTwice.Value) {
                     continue;
                 }
 
@@ -73,7 +79,7 @@ namespace AOC21 {
                 if (char.IsLower(path[i][0])) {
                     var cave = path[i];
 
-                    for (var j = i + 1; j < path.Count - 1; j++) {
+                    for (var j = i + 1; j < path.Count; j++) {
                         if (cave == path[j]) {
                             count++;
 
